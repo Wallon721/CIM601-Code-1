@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My Saturday</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+
+    <!-- Image link template to be reused. -->
+    <script id="link" type="text/html">
+      <a-entity class="link"
+        geometry="primitive: plane; height: 1; width: 1"
+        material="shader: flat; src: ${thumb}"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade"
+        sound="src: #click-sound; autoplay: true; loop: false;"></a-entity>
+    </script>
+
+    <script>
+      AFRAME.registerComponent("audiohandler", {
+        init: function() {
+          this.el.addEventListener("click", () => {
+            let playing = false;
+            let audio = document.querySelector("a-sound").components.sound;
+            var src = this.el.dataset.audio;
+            document.querySelector("a-sound").setAttribute("src", src);
+
+            audio.playSound();
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- thumbnails-->
+        <img
+          id="arcade-thumb"
+          crossorigin="anonymous"
+          src="pics/arcade_thumb.png"
+        />
+        <img
+          id="taco-thumb"
+          crossorigin="anonymous"
+          src="pics/taco_thumb.png"
+        />
+        <img
+          id="archery-thumb"
+          crossorigin="anonymous"
+          src="pics/archery_thumb.png"
+        />
+
+        <!--audio-->
+        <audio
+          id="click-sound"
+          crossorigin="anonymous"
+          src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"
+        ></audio>
+        <audio
+          id="arcade-sound"
+          crossorigin="anonymous"
+          preload="auto"
+          src="audio/arcade_cut_audio.mp3"
+        ></audio>
+        <audio
+          id="taco-sound"
+          crossorigin="anonymous"
+          preload="auto"
+          src="audio/taco_cut_audio.mp3"
+        ></audio>
+        <audio
+          id="archery-sound"
+          crossorigin="anonymous"
+          preload="auto"
+          src="audio/archery_audio.wav"
+        ></audio>
+
+        <!--360 images-->
+        <img
+          id="arcade"
+          crossorigin="anonymous"
+          src="arcade_360.png"
+        />
+        <img
+          id="taco"
+          crossorigin="anonymous"
+          src="taco_360.png"
+        />
+        <img
+          id="archery"
+          crossorigin="anonymous"
+          src="archery_360.png"
+        />
+      </a-assets>
+
+      <!-- 360-degree image. -->
+      <a-sky
+        id="image-360"
+        radius="10"
+        src="#arcade"
+        animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+        animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"
+      >
+      </a-sky>
+
+      <a-sound
+        position="0 0 -2"
+        id="ambient"
+        autoplay="false"
+        audiohandler
+      ></a-sound>
+
+      <!-- Image links. -->
+      <a-entity id="links">
+        <a-entity
+          template="src: #link"
+          data-src="#arcade"
+          data-audio="#arcade-sound"
+          data-thumb="#arcade-thumb"
+          position="-2 1 -5"
+          audiohandler
+        ></a-entity>
+        <a-entity
+          template="src: #link"
+          data-src="#taco"
+          data-audio="#taco-sound"
+          data-thumb="#taco-thumb"
+          position="2 1 -5"
+          audiohandler
+        ></a-entity>
+        <a-entity
+          template="src: #link"
+          data-src="#archery"
+          data-audio="#archery-sound"
+          data-thumb="#archery-thumb"
+          position="0 1 -5"
+          audiohandler
+        ></a-entity>
+      </a-entity>
+
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__mouseenter="_event: mouseenter; color: springgreen"
+          event-set__mouseleave="_event: mouseleave; color: black"
+          raycaster="objects: .link"
+        ></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

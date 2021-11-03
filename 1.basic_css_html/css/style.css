@@ -1,0 +1,35 @@
+img {
+    height: 500px;
+    width: auto;
+}
+
+body{
+    background-color:pink;
+    color:tomato;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p{
+    background-color:pink;
+    color:yellowgreen;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a.work{
+    color: hotpink;
+}
+
+a:hover{
+    color: yellow;
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+p{
+    background-color: teal;
+    margin: 20px auto;
+    padding: 33px 40px 20px 44px;
+    border: 10px solid yellowgreen;
+    border-radius: 12px;
+    max-width: 1000px;
+}

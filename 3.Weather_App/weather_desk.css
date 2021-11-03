@@ -1,0 +1,535 @@
+ body{
+    background-image: url(pics/background.jpg);
+    background-position: top; 
+    background-size: 2000px;
+    background-repeat: inherit;  
+} 
+
+.container_frame{
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    grid-template-rows: auto;
+    padding-left: 30px;
+}
+
+/* left side */
+.container_left{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto;
+}
+
+.left_up{
+    position: fixed;
+    left: 30px;
+    top: 30px;
+}
+
+/* left_up text decoration */
+
+.left_temperature{
+    font-family: Unna;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 115px;
+
+    color: #FFFFFF;
+
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.left_location{
+    font-family: Faustina;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 101px;
+    
+    color: #FFFFFF;
+
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.left_weather{
+    font-family: Unna;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 69px;
+
+    color: #FFFFFF;
+
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+a{
+    color:rgb(246, 255, 145);
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: rgb(63, 37, 105);
+    text-decoration: underline;
+}
+
+
+.left_down{
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+}
+
+/* left_down text decoration */
+
+.left_detail_Q{
+    font-family: Faustina;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+
+    color: #E5E5E5;
+
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.left_detail_A{
+    font-family: Unna;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+
+    color: #FFFFFF;
+
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* right side */
+
+.container_right{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto;
+    row-gap: 60px;
+    background: rgba(99, 86, 94, 0.54);
+    backdrop-filter: blur(50px);
+}
+
+
+/* Right Weather */
+
+.right_weather_frame{
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+    grid-template-columns: auto;
+    row-gap: 30px;
+}
+
+.weather_row{
+    margin: auto 30px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    font-family: Unna;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+    text-align: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 23px;
+    padding-top: 10px;
+
+    color: #FFFFFF;
+}
+
+.weather_title{
+    margin: auto 30px;
+    padding-top: 20px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    font-family: Faustina;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+img.right_weather{
+    width: 50px;
+}
+
+
+/* Right Zodiac */
+
+.zodiac_frame{
+    display: grid;
+    grid-template-rows: 0.08fr 1fr;
+    grid-template-columns: auto;
+}
+
+.zodiac_sign{
+    display: grid;
+    grid-template-rows:auto;
+    grid-template-columns: 0.2fr 1fr;
+    font-family: Faustina;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 38px;
+
+    color: #FFFFFF;
+}
+
+.zodiac_title{
+    margin: auto 0;
+}
+
+img.sign{
+    width: 65px;
+    margin: auto 0;
+    padding-left: 50px;
+}
+
+.zodiac_content{
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: auto;
+    box-sizing: border-box;
+    margin: 10px 30px;
+    row-gap: 15px;
+}
+
+/* Predict Boxes */
+.predict_love{
+    display: grid;
+    grid-template-rows: 0.11fr 1fr;
+    grid-template-columns: auto;
+    background: rgba(88, 77, 99, 0.8);
+    margin: 10px 30px;
+    opacity: 0.8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.predict_work{
+    display: grid;
+    grid-template-rows: 0.11fr 1fr;
+    grid-template-columns: auto;
+    background: rgba(171, 110, 120, 0.8);
+    margin: 10px 30px;
+    opacity: 0.8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.predict_dating{
+    display: grid;
+    grid-template-rows: 0.11fr 1fr;
+    grid-template-columns: auto;
+    background: rgba(127, 85, 129, 0.8);
+    margin: 10px 30px;
+    opacity: 0.8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.predict_title{
+    font-family: Unna;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    margin: 10px 30px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+}
+
+p{
+    font-family: Unna;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 35px;
+    margin: 10px 30px;
+
+    color: #FFFFFF;
+}
+
+
+@media only screen and (max-width:1000px){
+
+    body{
+        background-image: url(pics/background.jpg);
+        background-position: top; 
+        background-size: 2000px;
+        background-repeat: inherit;  
+    }
+
+    .container_frame{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 360px 2700px ;
+        margin: 0 auto;
+        padding-left: 0px;
+    }
+
+    .container_left{
+        display: grid;
+        grid-template-rows: 140px 182px;
+        grid-template-columns: auto;
+    }
+
+    .left_up{
+        margin: auto;
+        width: 50%;
+        text-align: center;
+        left: 0pt;
+        top: 0pt;
+        position: inherit;
+    }
+
+    .left_temperature{
+        font-family: Unna;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 80px;
+        line-height: 60px;
+        padding-left: 20px;
+
+        color: #FFFFFF;
+
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    .left_location{
+        font-family: Faustina;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 35px;
+        
+        color: #FFFFFF;
+    
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    .left_weather{
+        font-family: Unna;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 29px;
+    
+        color: #FFFFFF;
+    
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+
+    .left_down{
+        margin: auto;
+        width: 50%;
+        left: 0pt;
+        top: 0pt;
+        position: inherit;
+        text-align: center;
+    }
+
+    .left_detail_Q{
+        font-family: Faustina;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+    
+        color: #E5E5E5;
+    
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    .left_detail_A{
+        font-family: Unna;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+    
+        color: #FFFFFF;
+    
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    /* right side */
+
+    .container_right{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: auto;
+        row-gap: 60px;
+        background: rgba(99, 86, 94, 0.54);
+        backdrop-filter: blur(50px);
+    }
+
+
+    /* Right Weather */
+
+    .right_weather_frame{
+        display: grid;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+        grid-template-columns: auto;
+        row-gap: 30px;
+    }
+
+    .weather_row{
+        margin: auto 30px;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        font-family: Unna;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        border-top: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 23px;
+        padding-top: 10px;
+
+        color: #FFFFFF;
+    }
+
+    .weather_title{
+        margin: auto 30px;
+        padding-top: 20px;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        font-family: Faustina;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+
+    img.right_weather{
+        width: 30px;
+    }
+
+
+    /* Right Zodiac */
+
+    .zodiac_frame{
+        display: grid;
+        grid-template-rows: 0.08fr 1fr;
+        grid-template-columns: auto;
+    }
+
+    .zodiac_sign{
+        display: grid;
+        grid-template-rows:auto;
+        grid-template-columns: 0.2fr 1fr;
+        font-family: Faustina;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+
+        color: #FFFFFF;
+    }
+
+    .zodiac_title{
+        margin: auto 0;
+    }
+
+    img.sign{
+        width: 40px;
+        margin: auto 0;
+        padding-left: 50px;
+        
+    }
+
+    .zodiac_content{
+        display: grid;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr;
+        grid-template-columns: auto;
+        box-sizing: border-box;
+        margin: 10px auto;
+        row-gap: 15px;
+    }
+
+    /* Predict Boxes */
+    .predict_love{
+        display: grid;
+        grid-template-rows: 0.11fr 1fr;
+        grid-template-columns: auto;
+        background: rgba(88, 77, 99, 0.8);
+        margin: 10px 30px;
+        opacity: 0.8;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+    .predict_work{
+        display: grid;
+        grid-template-rows: 0.11fr 1fr;
+        grid-template-columns: auto;
+        background: rgba(171, 110, 120, 0.8);
+        margin: 10px 30px;
+        opacity: 0.8;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+    .predict_dating{
+        display: grid;
+        grid-template-rows: 0.11fr 1fr;
+        grid-template-columns: auto;
+        background: rgba(127, 85, 129, 0.8);
+        margin: 10px 30px;
+        opacity: 0.8;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+    .predict_title{
+        font-family: Unna;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 35px;
+        margin: 10px 30px;
+        /* identical to box height */
+
+
+        color: #FFFFFF;
+    }
+
+    p{
+        font-family: Unna;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 35px;
+        margin: 10px 30px;
+
+        color: #FFFFFF;
+    }
+
+
+}
